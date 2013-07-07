@@ -6,3 +6,4 @@ hintSilent format ["%1",damage player];
 sleep 1;
 };
 };
+//test
