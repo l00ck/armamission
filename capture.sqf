@@ -1,3 +1,5 @@
+captureSum = 0; //sum of all captured Objects
+
 fn_winningSide = //takes Object to capture, Name for the Marker
 {
 	_captureObject = _this select 0;
@@ -5,11 +7,12 @@ fn_winningSide = //takes Object to capture, Name for the Marker
 	_winningSide = "";
 	_captureScore = 0 ;
 	
+	
 	[_captureObject, _markerName, "ColorRed"]call fn_makeMarker;
 
 	while {_captureScore != 100} do {
 	
-		sleep 0.3;
+		sleep 0.1;
 		_units =  nearestObjects [_captureObject, ["Man"], 20];
 	
 		if (west countside _units > opfor countside _units) then {
@@ -32,12 +35,27 @@ fn_winningSide = //takes Object to capture, Name for the Marker
 	};
 	
 	[_captureObject, _markerName, "ColorBlue"]call fn_makeMarker;
-	_captured = true;
-	_captured;
+	captureSum = captureSum +1;
+	
+	if (captureSum == 2) then {
+		[CapturePoint3, "CP3", CapturePoint4, "CP4"] call fn_callCapture;
+	};
+	if (captureSum == 4) then {
+		[CapturePoint5, "CP5", CapturePoint6, "CP6"] call fn_callCapture;
+	};
 };
-[CapturePoint1, "CP1"] spawn fn_winningSide;
 
+fn_callCapture = {   // takes Captureobject and Markername.
+	_capturePoint1 = _this select 0;
+	_markerName1 = _this select 1;
+	_capturePoint2 = _this select 2;
+	_markerName2 = _this select 3;
 
+	[_capturePoint1, _markerName1] spawn fn_winningSide;
+	[_capturePoint2, _markerName2] spawn fn_winningSide;
+
+};
+[CapturePoint1,"CP1",CapturePoint2,"CP2"] call fn_callCapture;
 
 
 fn_makeMarker = {		//takes Object to capture, Markername, Color of the Marker
@@ -51,3 +69,4 @@ fn_makeMarker = {		//takes Object to capture, Markername, Color of the Marker
 	_markerName setMarkerType "mil_circle";
 	_markerName setMarkerColor _color;
 };
+

@@ -5,17 +5,16 @@ class Mission
 	{
 		"A3_Characters_F_BLUFOR",
 		"a3_map_stratis",
-		"A3_Structures_F_Mil_Flags",
 		"A3_Soft_F_Quadbike",
 		"A3_Structures_F_Ind_Cargo",
-		"A3_Structures_F_Civ_Garbage"
+		"A3_Structures_F_Civ_Garbage",
+		"A3_Soft_F_MRAP_02"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_BLUFOR",
-		"A3_Structures_F_Mil_Flags",
 		"A3_Structures_F_Ind_Cargo",
-		"A3_Structures_F_Civ_Garbage",
+		"A3_Soft_F_MRAP_02",
 		"a3_map_stratis"
 	};
 	randomSeed=12225867;
@@ -73,34 +72,68 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=3;
+		items=7;
 		class Item0
 		{
-			position[]={2051.3755,6.7121143,5898.2925};
-			id=2;
-			side="EMPTY";
-			vehicle="FlagPole_F";
-			leader=1;
-			skill=0.60000002;
-			text="FP3";
-		};
-		class Item1
-		{
 			position[]={1661.2316,5.5,5492.8584};
-			id=3;
+			id=2;
 			side="EMPTY";
 			vehicle="Land_CargoBox_V1_F";
 			skill=0.60000002;
 			text="CapturePoint1";
 		};
+		class Item1
+		{
+			position[]={1713.676,5.5,5504.54};
+			id=3;
+			side="EMPTY";
+			vehicle="Land_CargoBox_V1_F";
+			skill=0.60000002;
+			text="CapturePoint3";
+		};
 		class Item2
 		{
-			position[]={1661.5131,5.5,5459.6826};
+			position[]={1711.936,5.5,5425.7495};
 			id=4;
 			side="EMPTY";
-			vehicle="Land_Garbage_square3_F";
-			leader=1;
+			vehicle="Land_CargoBox_V1_F";
 			skill=0.60000002;
+			text="CapturePoint4";
+		};
+		class Item3
+		{
+			position[]={1626.6829,5.5,5437.9287};
+			id=5;
+			side="EMPTY";
+			vehicle="Land_CargoBox_V1_F";
+			skill=0.60000002;
+			text="CapturePoint2";
+		};
+		class Item4
+		{
+			position[]={1696.1371,5.5,5456.874};
+			id=6;
+			side="EMPTY";
+			vehicle="O_MRAP_02_hmg_F";
+			skill=0.60000002;
+		};
+		class Item5
+		{
+			position[]={1765.1793,5.5,5500.4326};
+			id=7;
+			side="EMPTY";
+			vehicle="Land_CargoBox_V1_F";
+			skill=0.60000002;
+			text="CapturePoint5";
+		};
+		class Item6
+		{
+			position[]={1752.8564,5.5,5423.335};
+			id=8;
+			side="EMPTY";
+			vehicle="Land_CargoBox_V1_F";
+			skill=0.60000002;
+			text="CapturePoint6";
 		};
 	};
 	class Markers
