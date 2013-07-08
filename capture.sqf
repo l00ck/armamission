@@ -1,6 +1,6 @@
-captureSum = 0; //sum of all captured Objects
+captureSum = 0; 													//sum of all captured Objects
 
-fn_winningSide = //takes Object to capture, Name for the Marker
+fn_winningSide = 													//takes Object to capture, Name for the Marker
 {
 	_captureObject = _this select 0;
 	_markerName = _this select 1;
@@ -8,12 +8,12 @@ fn_winningSide = //takes Object to capture, Name for the Marker
 	_captureScore = 0 ;
 	
 	
-	[_captureObject, _markerName, "ColorRed"]call fn_makeMarker;
+	[_captureObject, _markerName, "ColorRed"]call fn_makeMarker;  	//Makes a marker on the Map with the color Red ant the position from the Object "_captureobject" 
 
-	while {_captureScore != 100} do {
+	while {_captureScore != 100} do {								// this while loop is looking for the dominant team near the Position from the Capture Spot
 	
 		sleep 0.1;
-		_units =  nearestObjects [_captureObject, ["Man"], 20];
+		_units =  nearestObjects [_captureObject, ["Man"], 20];  	// looks up which units are near the object (20 meters)
 	
 		if (west countside _units > opfor countside _units) then {
 			_winningSide = west;
@@ -31,11 +31,11 @@ fn_winningSide = //takes Object to capture, Name for the Marker
 			_winningSide = "neutral";
 		};
 		
-		hintSilent format["Dominant:%1 Punktestand: %2", _winningSide, _captureScore];
+		hintSilent format["Dominant:%1 Punktestand: %2", _winningSide, _captureScore]; 
 	};
 	
 	[_captureObject, _markerName, "ColorBlue"]call fn_makeMarker;
-	captureSum = captureSum +1;
+	captureSum = captureSum +1;										// adds one to the capture sum
 	
 	if (captureSum == 2) then {
 		[CapturePoint3, "CP3", CapturePoint4, "CP4"] call fn_callCapture;
@@ -58,7 +58,7 @@ fn_callCapture = {   // takes Captureobject and Markername.
 [CapturePoint1,"CP1",CapturePoint2,"CP2"] call fn_callCapture;
 
 
-fn_makeMarker = {		//takes Object to capture, Markername, Color of the Marker
+fn_makeMarker = {		//takes  the object which is to capture ( needed for the coords), Markername, Color of the Marker
 
 	_captureObject = _this select 0;
 	_markerName = _this select 1;
