@@ -13,7 +13,7 @@ fn_winningSide = 													//takes Object to capture, Name for the Marker
 	while {_captureScore != 100} do {								// this while loop is looking for the dominant team near the Position from the Capture Spot
 	
 		sleep 0.1;
-		_units =  nearestObjects [_captureObject, ["Man"], 20];  	// looks up which units are near the object (20 meters)
+		_units =  nearestObjects [_captureObject, ["AllVehicles"], 20];  	// looks up which units are near the object (20 meters)
 	
 		if (west countside _units > opfor countside _units) then {
 			_winningSide = west;
