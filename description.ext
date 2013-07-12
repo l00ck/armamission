@@ -1,8 +1,6 @@
-respawn = 1;
+respawn = 3;
 respawnDelay = 5;
-respawnDialog = false;
-
-
+respawnDialog = true;
 
 #include "defines.hpp"
 

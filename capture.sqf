@@ -13,7 +13,8 @@ fn_winningSide = 													//takes Object to capture, Name for the Marker
 	cutRSC ["Capture_Points", "PLAIN"];
 		//////// Hud Anzeige/////////
 	
-	[_captureObject, _markerName, "ColorRed"]call fn_makeMarker;  	//Makes a marker on the Map with the color Red ant the position from the Object "_captureobject" 
+	[_captureObject, _markerName, "ColorRed"]call fn_makeMarker; //Makes a marker on the Map with the color Red ant the position from the Object "_captureobject" 
+
 
 	while {_captureScore != 100} do {								// this while loop is looking for the dominant team near the Position from the Capture Spot
 	
@@ -78,9 +79,16 @@ fn_winningSide = 													//takes Object to capture, Name for the Marker
 	
 	if (captureSum == 2) then {
 		[CapturePoint3, "CP3", CapturePoint4, "CP4"] call fn_callCapture;
+		 
+		 
+		"respawn_west" setMarkerPos getMarkerPos "respawn_west_2";
+		"respawn_east" setMarkerPos getMarkerPos "respawn_east_2";
 	};
 	if (captureSum == 4) then {
 		[CapturePoint5, "CP5", CapturePoint6, "CP6"] call fn_callCapture;
+		
+		"respawn_west" setMarkerPos getMarkerPos "respawn_west_3";
+		"respawn_east" setMarkerPos getMarkerPos "respawn_east_3";
 	};
 };
 
@@ -105,11 +113,8 @@ fn_makeMarker = {		//takes  the object which is to capture ( needed for the coor
 	_markerName = _this select 1;
 	_color = _this select 2;
 	
-	_marker1 = createMarker [_markerName, position _captureObject];
-	_marker1 setMarkerShape "ICON";
+	_marker = createMarker [_markerName, position _captureObject];
+	_marker setMarkerShape "ICON";
 	_markerName setMarkerType "mil_circle";
 	_markerName setMarkerColor _color;
 };
-
-
-

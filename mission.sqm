@@ -40,13 +40,13 @@ class Mission
 	};
 	class Groups
 	{
-		items=1;
+		items=2;
 		class Item0
 		{
 			side="WEST";
 			class Vehicles
 			{
-				items=2;
+				items=1;
 				class Item0
 				{
 					position[]={1657.1722,5.5,5459.2935};
@@ -56,16 +56,25 @@ class Mission
 					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
-					init="this addAction [""captureScript"", ""capture.sqf""];";
+					init="this addAction [""captureScript"", ""capture.sqf""]; this addAction [""respawn"", ""respawn.sqf""];";
 				};
-				class Item1
+			};
+		};
+		class Item1
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
 				{
-					position[]={1658.454,5.5,5491.5132};
+					position[]={1642.4786,5.5,5458.6099};
 					id=1;
 					side="WEST";
 					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
 					skill=0.60000002;
-					init="this setCaptive true;";
 				};
 			};
 		};
@@ -138,7 +147,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=2;
+		items=7;
 		class Item0
 		{
 			position[]={2050.2915,6.7628479,5899.2949};
@@ -147,8 +156,40 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={1615.7493,5.5,5295.979};
+			position[]={1618.8247,5.5,5265.4014};
+			name="respawn_west_2";
+			type="Empty";
+		};
+		class Item2
+		{
+			position[]={1656.4314,5.5,5252.5605};
+			name="respawn_west_3";
+			type="Empty";
+		};
+		class Item3
+		{
+			position[]={1580.5872,5.5,5278.8013};
 			name="respawn_west";
+			type="mil_flag";
+			colorName="ColorBlue";
+		};
+		class Item4
+		{
+			position[]={1693.884,5.5,5680.7529};
+			name="respawn_east";
+			type="hd_flag";
+			colorName="ColorRed";
+		};
+		class Item5
+		{
+			position[]={1735.739,5.5,5677.145};
+			name="respawn_east_2";
+			type="Empty";
+		};
+		class Item6
+		{
+			position[]={1778.3156,5.5,5667.042};
+			name="respawn_east_3";
 			type="Empty";
 		};
 	};
