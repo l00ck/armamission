@@ -20,7 +20,7 @@ class Capture_Points {
 
 		class Capture_Obj1: RscText{
 			idc = 1000;
-			text = "Objective A:"; //--- ToDo: Localize;
+			text = "Object A:"; //--- ToDo: Localize;
 			x = 0.881562 * safezoneW + safezoneX;
 			y = 0.742 * safezoneH + safezoneY;
 			w = 0.0825 * safezoneW;
@@ -29,7 +29,7 @@ class Capture_Points {
 
 		class Capture_Obj2: RscText{
 			idc = 1001;
-			text = "Objective B:"; //--- ToDo: Localize;
+			text = "Object B:"; //--- ToDo: Localize;
 			x = 0.881562 * safezoneW + safezoneX;
 			y = 0.764 * safezoneH + safezoneY;
 			w = 0.0825 * safezoneW;
