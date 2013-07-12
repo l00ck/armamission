@@ -90,7 +90,7 @@ fn_callCapture = {   // takes Captureobject and Markername.
 	_capturePoint2 = _this select 2;
 	_markerName2 = _this select 3;
 	
-	call fn_CaptureDisplay;
+
 	[_capturePoint1, _markerName1] spawn fn_winningSide;
 	[_capturePoint2, _markerName2] spawn fn_winningSide;
 

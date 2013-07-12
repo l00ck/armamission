@@ -138,12 +138,18 @@ class Mission
 	};
 	class Markers
 	{
-		items=1;
+		items=2;
 		class Item0
 		{
 			position[]={2050.2915,6.7628479,5899.2949};
 			name="12_4";
 			type="o_unknown";
+		};
+		class Item1
+		{
+			position[]={1615.7493,5.5,5295.979};
+			name="respawn_west";
+			type="Empty";
 		};
 	};
 };

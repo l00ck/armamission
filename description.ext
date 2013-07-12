@@ -1,6 +1,10 @@
+respawn = 1;
+respawnDelay = 5;
+respawnDialog = false;
+
+
+
 #include "defines.hpp"
-
-
 
 class RscTitles {
 	#include "dialogs.hpp"
